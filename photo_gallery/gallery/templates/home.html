@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        /* Navbar styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 20px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change color of dropdown links and dropdown button on hover */
+        .dropdown-content a:hover, .dropdown:hover .dropbtn {
+            background-color: #333;
+            color: white;
+        }
+         .card-container {
+            width: 100%; /* Ensure the container takes up the full width */
+            margin: 0 auto; /* Center the container */
+        }
+        .card {
+            width: 30%; /* Adjust as needed to fit three cards per row */
+            float: left; /* Float the cards to create a horizontal layout */
+            margin: 10px; /* Add some margin between cards */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+        .card img {
+            width: 100%; /* Ensure images fill the entire card */
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home">HOME</a>
+        <div class="dropdown">
+            <button class="dropbtn">ABOUT US</button>
+            <div class="dropdown-content">
+                <a href="#profile">#</a>
+                <a href="#settings">#</a>
+                <a href="#logout">#</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">STUDY ABROAD</button>
+            <div class="dropdown-content">
+                <a href="#profile">#</a>
+                <a href="#settings">#</a>
+                <a href="#logout">#</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">IMMIGRATION</button>
+            <div class="dropdown-content">
+                <a href="#profile">#</a>
+                <a href="#settings">#</a>
+                <a href="#logout">#</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">UNIVERSITIES</button>
+            <div class="dropdown-content">
+                <a href="#profile">Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+        <a href="#home">BLOG</a>
+        <a href="#home">CONTACT US</a>
+        <a href="#home">**********</a>
+
+    </div>
+
+    <h1>Welcome to the Photo Gallery</h1>
+    <div class="card-container">
+        {% for photo in photos %}
+        <div class="card">
+                    <a href="{% url 'photo_detail' photo.id %}">
+
+            <img src="{{ photo.image.url }}" alt="Photo">
+        </div>
+        {% endfor %}
+    </div>
+
+
+<div>
+ <!-- begin banner content -->
+         <section style=" margin-top: 0!important;">
+            <!--<section class="flat-row padding-60" >-->
+                <div class="slider-head slides">
+                    <div class="slider-content">
+                        <div class="slider-items">
+                            <div class="slider-slides" style="">
+                                <a href="/universities/nursingingermany" class="banner banner--square">
+                                    <div class="slider-inner">
+                                        <img class="" src="/images/tiles/nursing.jpg">
+                                    </div>
+                                    <div class="inner-items"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 30px;">Vocational Training In Germany</p>
+                                                <p class="text--natural">with guaranteed stipend</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slider-items">
+                            <div class="slider-slides shortcode-blog-item" style="">
+                                <a href="/colleges/languagecoaching" class="banner banner--square">
+                                    <div class="slider-inner">
+                                    <!--ielts-guru.jpg-->
+                                        <img src="/images/tiles/freeeducation.jpg">
+                                    </div>
+                                    <div class="inner-items"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 30px;">Free Education in Germany</p>
+                                                <!--<p class="text--natural">IELTS / German in Gurukulam </p>-->
+                                                <!--<p class="text--natural">Stay with your Language Guru</p>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slider-items">
+                            <div class="slider-slides" style="">
+                                <a href="/countries/englishspeakingcountries" class="banner banner--square">
+                                    <div class="slider-inner">
+                                        <img src="/images/tiles/studyincanada.jpg">
+                                    </div>
+                                    <div class="inner-items background-1"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 30px;">Study in Canada  </p>
+                                                <p class="text--natural">Post Study Support for settlement through our Immigration Support office in Canada </p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slider-items">
+                            <div class="slider-slides" style="">
+                                <a href="/countries/canada" class="banner banner--square">
+                                    <div class="slider-inner">
+                                        <img src="/images/tiles/migratetocanada.jpg">
+                                    </div>
+                                    <div class="inner-items"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 30px;">Study in UK </p>
+                                                <p class="text--natural">Practical Possibility for PR - Truck Drivers, Painters, Welders and more </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slider-items">
+                            <div class="slider-slides" style="">
+                                <a href="/universities/medicallist" class="banner banner--square">
+                                    <div class="slider-inner">
+                                        <img src="/images/tiles/Doctor.jpg">
+                                    </div>
+                                    <div class="inner-items"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 25px;">Collegium Medicum Nicolaus Copernicus University </p>
+                                                <p class="text--natural">World's Top Medical University for Best 24 INDIAN Students </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slider-items">
+                            <div class="slider-slides" style="">
+                                <a href="/universities/studyinpoland" class="banner banner--square">
+                                    <div class="slider-inner">
+                                        <img src="/images/tiles/tab3.jpg">
+                                    </div>
+                                    <div class="inner-items"></div>
+                                    <div class="slide-plot">
+                                        <div class="banner__title heading heading--secondary heading--with-line text--reverse heading--sub-2">
+                                            <div class="heading--multiline">
+                                                <p style="font-size: 30px;">University of Lodz </p>
+                                                <p class="text--natural ">Top Ranking University in Central Europe For Arts, Science &amp;   Management @ 2500 euro fee per year </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+         <!-- end banner contenttext--italic -->
+
+
+        <!-- Begin page content -->
+    <div class="custom"><div class="floaters"><a href="/bookappointments/bookappointment"><img src="/images/book_appointment.png" border="0" alt="Book-your-appointment"></a><!-- <a href="/discover/events-and-university-visits/inhouse-fair.html"><img src="/templates/home_tpl/images/events.png" border="0" alt="Events" /></a>--></div> </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+<!---jquery Validation End-->
+<style>
+.help-block {
+    display: block;
+    margin-top: 17px;
+    font-size: 14px;
+    margin-bottom: 17px;
+    color: #ff6262;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+var error1 = $('.alert-danger');
+  $('#couseform').validate({
+    errorElement: 'span', //default input error message container
+    errorClass: 'help-block', // default input error message class
+    focusInvalid: false, // do not focus the last invalid input
+    ignore: "",
+    rules:{
+    "data[cid]" : {required : true},
+    "data[pid]" : {required : true},
+    "data[id]" : {required : true},
+    //"data[message]" : {required : true},
+
+    },
+    messages:{
+      "data[cid]" : {required :"Please choose your preferred destination."},
+      "data[pid]" : {required :"Please choose level of course looking for."},
+      "data[id]" : {required :"Please choose your area of interest."},
+      //"data[message]" : {required :"Please enter message."},
+    },
+
+    invalidHandler: function (event, validator) { //display error alert on form submit
+      //success1.hide();
+      error1.show();
+      //App.scrollTo(error1, -200);
+    },
+
+    highlight: function (element) { // hightlight error inputs
+      $(element)
+        .closest('.form-group').addClass('has-error'); // set error class to the control group
+    },
+
+    unhighlight: function (element) { // revert the change done by hightlight
+      $(element)
+        .closest('.form-group').removeClass('has-error'); // set error class to the control group
+    },
+
+    success: function (label) {
+      label
+        .closest('.form-group').removeClass('has-error'); // set success class to the control group
+      label
+        .closest('.form-group').removeClass('error');
+    },
+  });
+});
+</script>
+
+<style type="text/css">
+	.content_block .cols .col:first-child {
+    margin-left: 0;
+}
+.content_block .cols .col {
+    width: 31.3%;
+    margin-left: 3%;
+    float: left;
+    position: relative;
+}
+.search_box {
+    display: block;
+    background: #9400D3;
+    padding: 23px 6%;
+    color: #fff;
+    min-height: 392px;
+}
+.cb:after {
+    content: "";
+    width: 100%;
+    height: 0;
+    clear: both;
+    display: block;
+}
+#main h4 {
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+.search_box h4 {
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.wrapper p {
+    margin: 0 0 15px;
+    text-align: justify;
+}
+
+.search_box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+select {
+    padding: 5px;
+    border: 1px solid #c2c2c2;
+    max-width: 100%;
+    width: 100%;
+    color: #666;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.search_box input[type="submit"] {
+    cursor: pointer;
+    display: block;
+    height: 51px;
+    background: #7ABA7A url(../lifeplanner/images/parallax/search_icon.png) no-repeat 98% center;
+    color: #fff;
+    padding-left: 3%;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    border: none;
+    text-indent: 0;
+    transition: all .5s ease-in 0;
+    -webkit-transition: all .5s ease-in 0;
+}
+.sbHolder {
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    height: 56px;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    display: block;
+    color: #3b4a5e;
+    margin-bottom: 10px;
+}
+.sbToggle {
+    background: url(../lifeplanner/images/parallax/down_arrrow.png) no-repeat center center;
+    display: block;
+    height: 56px;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover {
+    color: #3b4a5e;
+    outline: none;
+    text-decoration: none;
+}
+
+.sbSelector {
+    display: block;
+    height: 56px;
+    left: 0;
+    line-height: 56px;
+    outline: none;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 10px;
+    top: 0;
+    width: 100%;
+}
+.home_top.content_block .cols .col ul {
+    margin: 0;
+}
+.sbOptions {
+    background-color: #fff;
+    list-style: none;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow-y: auto;
+    margin: -2px 0 0!important;
+    border-radius: 0px 0px 3px 3px;
+}
+.home_top.content_block .cols .col ul li {
+    margin-bottom: 0;
+    min-height: 147px;
+    text-align: left;
+}
+
+.home_top.content_block .cols .sbOptions li {
+    min-height: 1px!important;
+}
+.sbOptions li {
+    padding: 0 7px;
+}
+
+.sbOptions li {
+    margin: 0;
+}
+.sbOptions li:last-child>a {
+    border-bottom: none;
+    margin-bottom: 5px;
+}
+
+.sbOptions li.last a {
+    border-bottom: none;
+}
+.sbOptions a:hover, .sbOptions a:focus, .sbOptions a.sbFocus {
+    color: #fe670e;
+}
+.sbOptions a:link, .sbOptions a:visited {
+    color: #3b4a5e;
+    text-decoration: none;
+}
+.sbOptions a {
+    border-bottom: dotted 1px #0c4da2;
+    display: block;
+    outline: none;
+    padding: 7px 0 7px 3px;
+    color: #3b4a5e;
+
+}
+.blog-pad {
+    padding: 0 15px 25px;
+    box-shadow: 0 25px 35px -32px rgba(0,0,0,0.2),0 36px 65px 0px rgba(0,0,0,0.19);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.blog-pad .item-content{
+    border-color:#fff0;
+}
+.shortcode-blog .item-content{
+    border-color:#fff0;
+}
+</style>
+
+<section class="flat-row full-color-v3" style="padding-top: 40px;padding-bottom: 40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="flat-clients">
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-md-6 shortcode-blog-item ">
+                                <div class="content-pad shortcode-blog">
+                                    <div class="post-item row">
+                                        <div class="col-md-12 " style="top: 19px;">
+                                            <div class="content-pad">
+                                                <div class="item-content">
+                                                    <h3 class="item-title">
+                                                         <a href="#" title="Your Career Starts Here" class="main-color-1-hover" style="font-size: 27px;">ABOUT LIFE PLANNER</a>
+                                                    </h3>
+                                                    <div class="shortcode-blog-excerpt" style="">
+                                                        <div class="flat-business">
+                                                            <div class="box-icon">
+                                                                <div class="icon-business">
+                                                                    <img src="/images/icon/f1.png" alt="image">
+                                                                </div>
+                                                                <div class="icon-business">
+                                                                    <img src="/images/icon/f2.png" alt="image">
+                                                                </div>
+                                                                <div class="icon-business">
+                                                                    <img src="/images/icon/f3.png" alt="image">
+                                                                </div>
+                                                            </div><!-- /box-iconfont-style: italic; -->
+                                                        </div>
+                                                        <div class="box-details">
+                                                            <!--<p style="font-size: 15px;text-align:justify;">Life Planner from its modest start up in 2012 has become a reputed and well respected educational facilitator, accredited by an ISO certification within this short span of trustworthyservice. Life Planner has been guiding, supporting and providing professional &amp; educational facilitation for students to choose curriculum, courses, and institutions in academic and professional streams abroad. </p> -->
+                                                       <p style="font-size: 15px;text-align:justify;"> Life Planner from its modest start up in 2012 has become a reputed and well respected educational facilitator among the study abroad consultants in Kottayam, Kerala, accredited by an ISO certification within this short span of trustworthy service. We offers detailed counselling for each student throughout admission and visa processing catering to their individual talent, interest and study skills.  </p>
+
+                                                        </div>
+                                                        <div class="about-btn">
+                                                            <a class="flat-button" href="/colleges/aboutus" style="float: right;border: solid 2px #333333;">Read More <i class="fa fa-angle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--/post-item-->
+                                </div>
+                            </div><!--/shortcode-blog-itemfont-style: italic;-->
+                            <div class="col-md-6 shortcode-blog-item">
+                                <div class="blog-pad">
+                                    <div class="content-pad">
+                                        <div class="post-item row">
+                                            <div class="col-md-12 " style="top: 19px;">
+                                                <div class="content-pad">
+                                                    <div class="item-content">
+                                                        <h3 class="item-title">
+                                                            <a href="#" title="Your Career Starts Here" class="main-color-1-hover" style="font-size: 27px;">CHAIRMAN'S MESSAGE</a>
+                                                        </h3>
+                                                        <div class="col-md-4 img-icon">
+                                                            <div class="content-pad">
+                                                                <div class="item-thumbnail">
+                                                                    <a href="#"><img src="/images/contact/chairmancopy.jpg" alt="image"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shortcode-blog-excerpt">
+                                                            <div class="box-details">
+                                                                <p style="font-size: 15px;text-align:justify;">Overseas education is a complicated area for students and their parents.This is not because of its nature but because of the reason that it is a field of wider opportunities and choices. Selecting a program, a University and a destination are not always an easy choice for most of the aspirants and there are risks of being misled.An attire for us will be selected in our own size and color preference, the food we eat is based on individual taste preference and similarly the way we think of a particular subject is also determined by different dimensions. </p>
+                                                            </div>
+                                                            <div class="about-btn">
+                                                                <a class="flat-button" id="myBtn" href="#" title="Spark Of Genius" style="float: right;border: solid 2px #333333;">Read More <i class="fa fa-angle-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--/post-item-->
+                                    </div>
+                                </div>
+                            </div><!--/shortcode-blog-item-->
+                        </div><!--/row-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="page-title parallax parallax4">
+    <div class="container">
+        <div class="row">
+            <div class="post-wrap">
+                <div class="top-title">
+                    <h2 class="title fancy"><span>SERVICES</span></h2>
+                    <p>Life planner is one of the most trusted overseas education service providers in India</p>
+                </div>
+                <div class="posts-carousel">
+                    <div class="flat-event">
+                        <div class="flat-blog-carousel owl-carousel owl-theme owl-loaded" data-item="3" data-nav="true" data-dots="false" data-auto="true">
+                            <!-- /grid-item -->
+
+
+
+
+
+                            <!-- /grid-item -->
+                            <!-- /grid-item -->
+                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-971px, 0px, 0px); transition: all 0.25s ease 0s; width: 3884px;"><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/5.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>SCHOLARSHIP GUIDANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>A limited number of scholarships are available now for students.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/6.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>PRE DEPARTURE BRIEFING</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Pre departure Orientation and checklist screening.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/1.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>POST-LANDING ASSISTANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div>Smooth transition ensured with Feel At Home service.</div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /cs-post-header -->
+                                        </div><!-- /event-overlay -->
+                                    </div><!-- /event-item -->
+                                </div><!-- /grid-item-inner -->
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/loan.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>EDUCATIONAL LOAN ASSISTANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div>Financial Concerns - Multiple Options.</div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /cs-post-header -->
+                                        </div><!-- /event-overlay -->
+                                    </div><!-- /event-item -->
+                                </div><!-- /grid-item-inner -->
+                            </div></div><div class="owl-item active" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/7.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>CAREER COUNSELING</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Keeping in view your individual profile, our team would help you understand your choices.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item active" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/2.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>BUILDING A STUDENT PROFILE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Universities give value to Letters of Recommendations.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item active" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/3.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>CANDIDATE APPLICATION</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>The application process can be daunting.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item active" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/4.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>SHORLISTING YOUR EDUCATION PLATFORM</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>There is only one University or College, which is the perfect fit for each of us.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/5.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>SCHOLARSHIP GUIDANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>A limited number of scholarships are available now for students.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/6.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>PRE DEPARTURE BRIEFING</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Pre departure Orientation and checklist screening.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/1.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>POST-LANDING ASSISTANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div>Smooth transition ensured with Feel At Home service.</div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /cs-post-header -->
+                                        </div><!-- /event-overlay -->
+                                    </div><!-- /event-item -->
+                                </div><!-- /grid-item-inner -->
+                            </div></div><div class="owl-item" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/loan.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>EDUCATIONAL LOAN ASSISTANCE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div>Financial Concerns - Multiple Options.</div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /cs-post-header -->
+                                        </div><!-- /event-overlay -->
+                                    </div><!-- /event-item -->
+                                </div><!-- /grid-item-inner -->
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/7.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>CAREER COUNSELING</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Keeping in view your individual profile, our team would help you understand your choices.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/2.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>BUILDING A STUDENT PROFILE</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>Universities give value to Letters of Recommendations.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/3.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>CANDIDATE APPLICATION</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>The application process can be daunting.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div><div class="owl-item cloned" style="width: 241.75px;"><div class="grid-item">
+                                <div class="grid-item-inner">
+                                    <div class="event-item">
+                                        <div class="event-thumbnail">
+                                            <a href="#">
+                                                <img src="/images/about/index1/event/gril/4.jpg" alt="image">
+                                            </a>
+                                        </div><!-- /event-thumbnail -->
+                                        <div class="event-overlay">
+                                            <div class="cs-post-header">
+                                                <div class="cs-category-links">
+                                                    <a class="overlay-top" href="#">
+                                                        <h4>SHORLISTING YOUR EDUCATION PLATFORM</h4>
+                                                    </a>
+                                                    <div class="overlay-footer">
+                                                        <div></div>
+                                                        <div>There is only one University or College, which is the perfect fit for each of us.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /event-overlay -->
+                                    </div>
+                                </div>
+                            </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="">prev</div><div class="owl-next" style="">next</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="flat-row padding-small">
+    <div class="container">
+        <div class="flat-choose-us">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="globe-edu">
+                    <div class="name-toggle">
+                        <h2 class="title">Global Education Services</h2>
+                    </div>
+                    <div class="search_box cb">
+                        <h4>Explore your Study Options</h4>
+                        <p>Select your preferred destination and your field of study </p>
+                        <form id="couseform" name="couseform" action="/universities/exploreresult" method="POST" class="has-validation-callback" novalidate="novalidate">
+                            <div>
+                             <select name="data[cid]" class="sbHolder" id="cid" data-validation="required" data-validation-error-msg="Please select your preferred destinations" sb="">
+                                <option value="">Your Preferred Destination</option>
+                                                                    <option value="13">Australia</option>                                    <option value="38">Canada</option>                                    <option value="75">France</option>                                    <option value="82">Germany</option>                                    <option value="105">Ireland</option>                                    <option value="107">Italy</option>                                    <option value="144">Moldova</option>                                    <option value="157">New Zealand</option>                                    <option value="175">Poland</option>                                    <option value="205">Spain</option>                                    <option value="211">Sweden</option>                                    <option value="230">United Kingdom</option>                                    <option value="231">United States</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select name="data[pid]" class="sbHolder" id="pid" data-validation="required" data-validation-error-msg="Please select level of course looking for" sb="" style="">
+                                    <option value="">Level of course looking for</option>
+                                    <option value="1">Postgraduate</option>
+                                    <option value="2">Undergraduate</option>
+                                </select>
+                            </div>
+                            <div id="">
+                                <select name="data[id]" class="sbHolder" id="id" data-validation="required" data-validation-error-msg="Please select your area of interest" sb="90192809">
+                                    <option value="">Your area of interest</option>
+                                     <option value="3">Accounting</option><option value="4">Public health </option><option value="6">Nursing</option><option value="7">Tourism</option><option value="8">Engineering</option><option value="9">Medicine</option><option value="10">Management</option><option value="11">Business </option><option value="12">MBA</option>
+                                 </select>
+                             </div>
+                             <input type="submit" value="Search">
+                         </form>
+                     </div>
+                 </div>
+             </div>
+                 <div class="col-md-6 col-sm-6">
+                    <div class="globe">
+                    <div class="flat-blog">
+                        <div class="section-header">
+                            <div class="name-blog">
+                                <h2 class="title">Upcoming Events</h2>
+                                <a class="" href="#"> <i class=""></i></a>
+                            </div>
+                        </div>
+                        <div class="section-body" id="style-1">
+                            <div class="row">
+                                <div class="col-md-12 shortcode-blog-item">
+                                    <!-- <div class="col-md-12"> </div> -->
+                                    <div class="event-content">
+
+                                        <div class="marquee">
+
+                                                                                </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!--/row-->
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/col-md-6 col-sm-6 -->
+            </div>
+        </div>
+    </div>
+</section></div>
+
+
+
+ <section class="flat-row padding-small-v1">
+    <div class="container">
+        <div class="row">
+            <div class="flat-blog">
+                <div class="section-header">
+                    <div class="name-blog">
+                        <h2 class="title fancy"><span>OUR MISSION</span></h2>
+                        <!-- <a class="" href="#"> <i class=""></i></a> -->
+                    </div>
+                </div>
+
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-md-4 shortcode-blog-item">
+                            <div class="content-pad">
+                                <div class="post-item ">
+                                    <div class="col-md-12 ">
+                                    	<div class="row">
+                                    		<div class="content-pad">
+                                            <div class="item-thumbnail">
+                                                <a href="/colleges/aboutus">
+                                                    <img src="/images/about/index1/blog/right.jpg" alt="image">
+                                                    <!--<span class="thumbnail-overlay">June 3, 2014</span>-->
+                                                </a>
+                                            </div>
+                                        </div>
+                                    	</div>
+                                    	<div class="row">
+                                    		<div class="content-pad">
+                                            <div class="item-content">
+                                                <h3 class="item-title">
+                                                    <a href="/colleges/aboutus" title="Your Career Starts Here" class="main-color-1-hover">Right Direction</a>
+                                                </h3>
+                                                <div class="shortcode-blog-excerpt">Doubts and inhibitions have no space as Life Planner has been certified for its services globally by  ISO 9001:2015</div>
+                                                <div class="item-meta">
+                                                <a class="flat-button" href="/colleges/aboutus" title="Your Career Starts Here">DETAILS <i class="fa fa-angle-right"></i></a>
+                                                <a href="/colleges/aboutus" class="main-color-1-hover" title="View comments"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	</div>
+
+                                    </div>
+
+                                </div><!--/post-item-->
+                            </div>
+                        </div><!--/shortcode-blog-item-->
+
+                        <div class="col-md-4 shortcode-blog-item">
+                            <div class="content-pad">
+                                <div class="post-item ">
+                                    <div class="col-md-12">
+                                    	<div class="row">
+                                    		 <div class="content-pad">
+                                            <div class="item-thumbnail">
+                                                <a href="#">
+                                                    <img src="/images/about/index1/blog/subjects.jpg" alt="image">
+                                                    <!--<span class="thumbnail-overlay">June 3, 2014</span>-->
+                                                </a>
+                                            </div>
+                                        </div>
+                                    	</div>
+                                    	<div class="row">
+                                    		 <div class="content-pad">
+                                            <div class="item-content">
+                                                <h3 class="item-title">
+                                                    <a href="/bookappointments/bookappointment" title="Spark Of Genius" class="main-color-1-hover">Suitable Subjects</a>
+                                                </h3>
+                                                <div class="shortcode-blog-excerpt">Entrusting Life Planner enables you to revive the stream which you were born for.</div>
+                                                <div class="item-meta">
+                                                    <a class="flat-button" href="/bookappointments/bookappointment" title="Spark Of Genius">DETAILS <i class="fa fa-angle-right"></i></a>
+                                                    <a href="#" class="main-color-1-hover" title="View comments"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	</div>
+
+                                    </div>
+                                </div><!--/post-item-->
+                            </div>
+                        </div><!--/shortcode-blog-item-->
+                              <div class="col-md-4 shortcode-blog-item">
+                            <div class="content-pad">
+                                <div class="post-item ">
+                                    <div class="col-md-12">
+                                    	<div class="row">
+                                    		 <div class="content-pad">
+                                            <div class="item-thumbnail">
+                                                <a href="/universities/collegelist">
+                                                    <img src="/images/about/index1/blog/top.jpg" alt="image">
+                                                    <!--<span class="thumbnail-overlay">June 3, 2014</span>-->
+                                                </a>
+                                            </div>
+                                        </div>
+                                    	</div>
+                                    	<div class="row">
+                                    		 <div class="content-pad">
+                                            <div class="item-content">
+                                                <h3 class="item-title">
+                                                    <a href="/universities/collegelist" title="Spark Of Genius" class="main-color-1-hover">Top Universities</a>
+                                                </h3>
+                                                <div class="shortcode-blog-excerpt">Life Planner promotes ranked universities by focusing on the student's future so that they are being awarded with degrees, which all  accepted and recognized globally.</div>
+                                                <div class="item-meta">
+                                                    <a class="flat-button" href="/universities/collegelist" title="Spark Of Genius">DETAILS <i class="fa fa-angle-right"></i></a>
+                                                    <a href="/universities/collegelist" class="main-color-1-hover" title="View comments"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    	</div>
+
+                                    </div>
+                                </div><!--/post-item-->
+                            </div>
+                        </div><!--/shortcode-blog-item-->
+                    </div><!--/row-->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="flat-row full-color-v4">
+    <div class="container">
+            <div class="row">
+                <div class="flat-blog">
+                <div class="section-header">
+                            <div class="name-blog">
+                                <h2 class="title fancy"><span> PARTNERING UNIVERSITIES AND COLLEGES </span></h2>
+                                <!-- <a class="" href="#"> <i class=""></i></a> -->
+                            </div>
+                        </div>
+                <div id="carousel-container">
+                <div id="carousel-inner">
+                    <ul id="carousel-ul" style="right: 209.435px;">
+                        <li></li><li><img src="/images/logos/London-South.png"></li><li><img src="/images/logos/spokane.png"></li><li><img src="/images/logos/california.png"></li><li><img src="/images/logos/rockies.png"></li><li><img src="/images/logos/selkirk.png"></li><li><img src="/images/logos/stlaurance.png"></li><li><img src="/images/logos/vancouver.png"></li><li><img src="/images/logos/unbc1.png"></li><li><img src="/images/logos/yukon.png"></li><li><img src="/images/logos/montana.png"></li><li><img src="/images/logos/northernlights.png"></li><li><img src="/images/logos/nipissing.png"></li><li><img src="/images/logos/mountsaint.png"></li><li><img src="/images/logos/coastmountain.png"></li><li><img src="/images/logos/capilano.png"></li><li><img src="/images/logos/cumberland.png"></li><li><img src="/images/logos/greatplains.png"></li><li><img src="/images/logos/lakeland.png"></li><li><img src="/images/logos/parkland.png"></li><li><img src="/images/logos/capebretonuniversity.png"></li><li><img src="/images/logos/download.png"></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="main-content">-->
+<!--       <div class="container-fluid">-->
+<!--            <div class="row">-->
+<!--                <div id="map" style="width: 100%; height: 500px; "></div>-->
+                <!--<iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1654.0559448716306!2d76.52701081313877!3d9.592665451754899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa874c155759a8734!2sLife%20Planner%20Studies%20%26%20Opportunities%20(P)%20Ltd.!5e0!3m2!1sen!2sin!4v1585735060499!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d982.368580029061!2d76.2866544!3d9.9776213!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d7a4bc19b43%3A0x1d4126320c8d21bc!2sLife%20Planner%20Studies%20%26%20Opportunities%20(P)%20Ltd%2CKochi!5e0!3m2!1sen!2sin!4v1585735277675!5m2!1sen!2sin" width="1320" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+<!--            <iframe src="https://www.google.com/maps/d/embed?mid=18IygGDUUDVysZSiw2d5iPNNfSsoqC2As" width="1300" height="480"></iframe>-->
+<!--            </div>-->
+<!--        </div>     -->
+
+<!--</section>-->
+
+ <section class="main-content">
+       <div class="container-fluid">
+            <div class="row">
+                <!--<div id="map" style="width: 100%; height: 500px; "></div> -->
+                   <!--<iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1654.0559448716306!2d76.52701081313877!3d9.592665451754899!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa874c155759a8734!2sLife%20Planner%20Studies%20%26%20Opportunities%20(P)%20Ltd.!5e0!3m2!1sen!2sin!4v1585735060499!5m2!1sen!2sin"  style="width: 100%; height: 500px; " frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15714.943943231698!2d76.3157407!3d10.0386316!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d7a4bc19b43%3A0x1d4126320c8d21bc!2sLife%20Planner%20Studies%20%26%20Opportunities%20(P)%20Ltd%2CKochi!5e0!3m2!1sen!2sin!4v1675926469724!5m2!1sen!2sin" style="width: 100%; height: 500px;  style=" border:0;"="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div><!-- /container-fluid -->
+
+</section>
+        <section class="flat-row full-color">
+                        <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                       <div class="flat-reviews">
+                            <h1>Testimonials</h1>
+                            <h3>Word Of Mouth</h3><br><br>
+                            <div class="flat-causes">
+
+                                <div class="featured-causes owl-carousel owl-theme owl-loaded" data-item="6" data-nav="false" data-dots="false" data-auto="false">
+                                    <!--================================================-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <!--===========================================-->
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-9400px, 0px, 0px); transition: all 0.25s ease 0s; width: 16920px;"><div class="owl-item cloned" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"Good institution that care each and every student.. Better for our career...."</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Aswathy Pillai</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"I am happy with the service provided by life planner kottayam . provided me an excellent support throughout my Poland visa procedure..here I'm very thankful to all staff in Life planner .They help me a lot ,overall the service provided by life planner was excellent..... ☺"</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Preeja Prakash</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>"Sujin helped me to explore the opportunities regarding my higher studies and managed to enroll me to the university in a short span of time. He was always to willing to help and conncected me with his former students which was very helpful during my stay abroad."</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Roshi Philip
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>I am very satisfied with this agency. Because of them I have reached Poland safely. They have done their job with 100% dedication.After reaching Poland  they took care of me and for one year they are taking giving their attention towards us of and life planners are providing large opportunities for the abroad studies.Thank you so much for showing a path towards my dream</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Aswin Shajia
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>I am really thankful to life planner for helping me to get into Nicolaus Copernicus University in Poland. The staffs are really helpful and helped me get through all visa processes easily. I am able to pursue my dream through them. If you are planning to study abroad then life planner is the best option 👍</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Nimmy George
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>I would highly recommend to anyone who is looking to go abroad. It's my second year in Poland and from the beginning till the arrival, they were committed to helping me out.
+                                                I thank the whole team, I truly believe that Life planner is the only reason that I'm here.</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Aaron Thomas Abraham
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>Life Planner Studies &amp; Opportunities has a team of highly professional and dedicated minds who were really helpful during my stay, admission and visa application processes for Poland. I highly recommend them.</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Minju Merin Fransis
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>It was a pleasure to have used Life Planner Studies &amp; Opportunities to secure my study Visa to Poland and I am highly impressed by the level of customer service that the Staff of Life Planner Studies &amp; Opportunities possesses and provides. You have been of great help and you are highly fantastic.</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Tojan Philip
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>I highly recommend Life Planner for studies abroad .They were really helpful  in guiding me through the admission and visa application procedures .I would like to sincerely thank Life Planner for helping me achieve my dream of studying medicine at Nicolaus Copernicus University.</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Sruthi Augusthy
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>"Helped me get through all study permit and German Visa with ease. Life Planner branch staff members are very friendly and understanding and also guided me for getting everything at correct time without delays.would recommend if you are planning to go abroad for study."</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">K K</h6>
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item active" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>"I highly recommend Life Planner. It's because of their service I have reached Germany safe and sound. I haven't faced any problems at all. Everything's great here. My accommodation is wonderful. They even provided me with a bicycle so that I won't have any transportation problem. Thank you Life Planner for taking care of me and bringing me to my destination.."</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Lynn Ts</h6>
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"Iam very satisfied with this agency. Because of them I have reached Germany safety. They have done their job perfectly. After reaching Germany also they took care of me.thank you life planner."</p>
+                                        </div>
+                                        <div class="title-testimonial">
+                                            <div class="post-title">
+                                                <h6 class="title-post">Irene Kainikkal</h6>
+                                                 <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"I recommend Life Planners since they provide a trustful service for the students who plan to study abroad.This is the best overseas educational consultant."</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Abhishek Babu</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"A good place to guide us into the future"</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Jaison K Sibin</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"Good institution that care each and every student.. Better for our career...."</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Aswathy Pillai</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+                                            <p>"I am happy with the service provided by life planner kottayam . provided me an excellent support throughout my Poland visa procedure..here I'm very thankful to all staff in Life planner .They help me a lot ,overall the service provided by life planner was excellent..... ☺"</p>
+                                        </div>
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">
+                                                <h6 class="title-post">Preeja Prakash</h6>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>"Sujin helped me to explore the opportunities regarding my higher studies and managed to enroll me to the university in a short span of time. He was always to willing to help and conncected me with his former students which was very helpful during my stay abroad."</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Roshi Philip
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item cloned" style="width: 940px; margin-right: 0px;"><div class="item">
+                                        <div class="text">
+
+                                            <p>I am very satisfied with this agency. Because of them I have reached Poland safely. They have done their job with 100% dedication.After reaching Poland  they took care of me and for one year they are taking giving their attention towards us of and life planners are providing large opportunities for the abroad studies.Thank you so much for showing a path towards my dream</p>
+                                        </div>
+
+                                        <div class="title-testimonial">
+
+                                            <div class="post-title">Aswin Shajia
+                                               <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                        </div>
+                                    </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="display: none;">prev</div><div class="owl-next" style="display: none;">next</div></div><div class="owl-dots" style=""><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container ">
+                 <div class="flat-blog">
+                    <div class="section-header">
+                        <div class="name-blog">
+                           <a class="flat-button button-right" href="https://www.google.com/search?sxsrf=ALeKk01LhsUbJQgadCmd7o_ofKOeR9BybQ%3A1601103277257&amp;ei=reVuX9yWD5Ht9QOaxaG4Ag&amp;q=Life+Planner+Studies+%26+Opportunities+%28P%29+Ltd.&amp;oq=Life+Planner+Studies+%26+Opportunities+%28P%29+Ltd.&amp;gs_lcp=CgZwc3ktYWIQAzIGCAAQFhAeMgYIABAWEB4yAggmMgIIJlCBmwJYgZsCYI6jAmgAcAF4AIAB7AGIAewBkgEDMi0xmAEAoAECoAEBqgEHZ3dzLXdpesABAQ&amp;sclient=psy-ab&amp;ved=0ahUKEwicodvAnobsAhWRdn0KHZpiCCcQ4dUDCA0&amp;uact=5#lrd=0x3b062b0a6569652b:0xa874c155759a8734,1,,," target="_blank">View all google reviews<i class="fa fa-angle-right"></i></a>
+                           <a class="flat-button button-right" href="https://www.google.com/search?sxsrf=ALeKk01LhsUbJQgadCmd7o_ofKOeR9BybQ%3A1601103277257&amp;ei=reVuX9yWD5Ht9QOaxaG4Ag&amp;q=Life+Planner+Studies+%26+Opportunities+%28P%29+Ltd.&amp;oq=Life+Planner+Studies+%26+Opportunities+%28P%29+Ltd.&amp;gs_lcp=CgZwc3ktYWIQAzIGCAAQFhAeMgYIABAWEB4yAggmMgIIJlCBmwJYgZsCYI6jAmgAcAF4AIAB7AGIAewBkgEDMi0xmAEAoAECoAEBqgEHZ3dzLXdpesABAQ&amp;sclient=psy-ab&amp;ved=0ahUKEwicodvAnobsAhWRdn0KHZpiCCcQ4dUDCA0&amp;uact=5#lrd=0x3b062b0a6569652b:0xa874c155759a8734,3,,," target="_blank">Write a google review<i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            </section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
+<style type="text/css">
+
+    #carousel-container {
+    width:100%;
+    margin: 2em auto;
+    position: relative;
+    /*border: 1px solid #ccc;*/
+    overflow: hidden;
+    height: 200px;
+}
+
+#carousel-inner {
+    width: 100%;
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+
+#carousel-ul {
+    position:relative;
+    right:320px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width:9999px;
+
+}
+
+#carousel-ul li{
+    float: left;
+    width: 200px;
+    padding:0px;
+    height:200px;
+    margin: 0px 5px 0 5px;
+    position: relative;
+    /*background: #c0c0c0;*/
+    line-height: 186px;
+    font-size: 2em;
+    text-align: center;
+}
+
+</style>
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+      <h2 style="color:black">Chairman's Message</h2>
+    </div>
+    <div class="modal-body">
+        <div class="col-md-3 img-icon">
+          <div class="content-pad">
+            <div class="item-thumbnail">
+                <a href="#"><img src="/images/contact/chairmancopy.jpg" alt="image"></a>
+                </div>
+            </div>
+        </div>
+        <div class="shortcode-blog-excerpt">
+            <div class="box-details">
+
+                <p style="text-align:justify;">Overseas education is a complicated area for students and their parents.This is not because of its nature but because of the reason that it is a field of wider opportunities and choices. Selecting a program, a University and a destination are not always an easy choice for most of the aspirants and there are risks of being misled.
+
+                An attire for us will be selected in our own size and color preference, the food we eat is based on individual taste preference and similarly the way we think of a particular subject is also determined by different dimensions. In short we have our own choice for each and every aspect that is tailor made to fit best on us. But why is it that we run behind a particular trend in education? Why do we feel the pressure to join a group that opts a particular program, University, college or a country?
+
+                As stated above, each student has their own dreams, passion, skill and talent. Moreover they will have a vision on what they should become. Hence the role of education must be in enhancing their vision and to fulfill their dreams.
+
+                Life Planner is well connected with a network of world class universities, colleges and B- Schools across the globe. Our strategy is to provide tailor made options for each and every student according to their personal preferences. This analysis is carried out through our well trained and experienced counselors who will be able to suggest easy legal immigration options for your need. Our team also assures that every student gets uncompromised quality of education and unbiased counseling.
+
+                As the Chairman of Life Planner, a company that was established with a true vision, I personally visit most of the universities that we promote to ensure its facilities, quality and post-study options. With this assurance I can say that every aspect of your life from the moment you join with us will be planned at Life Planner.
+            </p>
+        </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+</div>
+</div>
+ <!-- <div class="modal fade" id="overlay">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+
+      </div>
+      <div class="modal-body">
+        <a href="/colleges/registration">
+        <img  src="/images/copy.jpg" border="0" alt="" />
+        </a>
+        <p>Context here</p>
+        <button class="btn btn-purpple" type="button"  onclick="window.location='/colleges/registration'" >Register Now</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<style>
+#style-1::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #c1c1c1;
+}
+.section-header{
+    text-align: center!important;
+}
+#style-1{
+        /*height: 440px!important;*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+.flat-blog .title {
+    float: none;
+    text-align: center;
+    padding: 10px;
+}
+.fancy {
+  line-height: 0.5;
+  text-align: center;
+}
+.fancy span {
+  display: inline-block;
+  position: relative;
+  line-height: 25px;
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 3px solid #9400D3;
+  top: 10px;
+  width: 500px;
+}
+.fancy span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.fancy span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.globe img{
+        height:222px;
+    }
+/* ---// meadia screen //--- */
+@media (min-width: 1200px){
+    .blog-pad{
+       width: 560px;
+       height: 400px;
+    }
+
+    .globe-edu {
+        padding: 50px 0 0;
+        width:90%;
+    }
+    .globe-edu .search_box {
+        height: 400px;
+    }
+    .globe {
+        padding: 45px 0 0;
+    }
+    .globe img{
+        height:200px;
+    }
+    .post-item .content-pad .item-title {
+        font-size: 16px;
+    }
+  	.flat-business .box-icon .icon-business {
+  		padding: 0 40px;
+  }
+  .box-details {
+  		padding-top:10px;
+  }
+  .flat-business .box-icon {
+    margin: 0 -35px;
+}
+ .globe .section-body{
+    height: 450px;
+ }
+
+}
+    @media (min-width: 970px){
+    .img-icon{
+        /*float: right;*/
+        /*margin-top: 50px;*/
+    }
+    .about-btn a {
+        margin-top: 5px;
+    }
+
+}
+
+.btn-purpple{
+    color: #ffffff;
+    background: #9400D3;
+    margin-left: 35%;
+    margin-top: 10px;
+}
+.btn-purpple:hover{
+     color: #ffffff;
+    background: #7ABA7A;
+}
+.modal{
+    margin: 30px auto;
+    overflow-y: scroll;
+}
+
+.modal-header {
+    padding: 24px 22px;
+    color: white;
+    font-size: 24px;
+}
+ .about-btn{
+        float: left;
+    }
+/* Modal Body */
+.modal-body {padding: 21px 24px;
+height: auto!important;}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-footer {
+    padding: 24px 22px;
+    background-color: #7ABA7A;
+
+}
+
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@media (min-width:480px)  {
+
+    .modal-body {padding: 21px 24px;height: 250px;
+    overflow-y: auto;}
+
+    .modal-dialog{
+    overflow-y: initial !important
+}
+}
+@media (min-width:320px)  {
+    .modal-content {
+        width: 100%;
+    }
+    .modal-body {padding: 21px 24px;height: 250px;
+    overflow-y: auto;}
+
+    .modal-dialog{
+    overflow-y: initial !important
+}
+
+}
+.event-content{
+    /*overflow: hidden;*/
+    background: white;
+    position: relative;
+}
+
+.globe .section-body{
+    height: 400px;
+ }
+
+</style>
+<script>
+    // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var Carousel = new
+function() {
+
+    var wrapper = document.getElementById('carousel-container'),
+        timer = null;
+
+    var start = function() {
+        doCarousel();
+    };
+
+    var sliding = function() {
+        var item_width = $('#carousel-ul li').outerWidth() + 10;
+        var right_indent = parseInt($('#carousel-ul').css('right')) - item_width;
+        $('#carousel-ul:not(:animated)').animate({
+            'right': right_indent
+        }, 2000, 'linear', function() {
+
+           $('#carousel-ul li:first').after($('#carousel-ul li:last'));
+                        $('#carousel-ul').css({
+                'right': '320px'
+            });
+        });
+    };
+
+    var doCarousel = function() {
+        timer = setInterval(sliding, 10);
+    };
+
+    var pause = function() {
+        clearInterval(timer);
+        timer = null;
+    };
+
+    var resume = function() {
+        doCarousel();
+    };
+
+    this.init = function() {
+        start();
+    };
+}();
+
+$(function() {
+    Carousel.init();
+});
+
+$('#carousel-ul li').mouseover(function(){
+        //alert("hey");
+    //clearInterval(timer);
+    //timer = null;
+    //pause();
+    Carousel.pause();
+});
+</script>
+        <!-- end page content-->
+        <!-- Begin footer content -->
+
+        <footer class="footer full-color">
+           <section id="bottom">
+                <div class="section-inner">
+                </div>
+            </section>
+            <div id="bottom-nav">
+                <div class="container">
+                    <div class="link-center">
+                        <a href="#" id="back-to-top" class="btn btn-primary post-scroller-button post-scroller-up back-to-top show" title="Back to top">
+                            <i class="fa fa-angle-up"></i>
+                        </a>
+                    </div>
+                    <div class="row footer-content">
+                        <div class="copyright col-md-5">
+                            Lifeplanner Studies &amp; Opportunities (P) Ltd. <br>
+                            2nd Floor, Thevarolil Building, &nbsp;<br>
+                            Near Darsana IELTS Academy, Sastri Road, Kottayam-1.<br>
+                            Email: info@lifeplanneruniversal.com <br>Contact: +91 9072222911, +91 9072222933<br><!--<a href="http://lifeplanneruniversal.com/">www.lifeplanneruniversal.com</a>-->
+                        </div>
+                        <div class="hiring col-md-3">
+                        </div>
+                        <nav class="col-md-4 footer-social">
+                            <a href="/universities/contact_us" data-toggle="popover" title="we are hiring">WE ARE HIRING</a>
+                            <ul class="social-list">
+                                <li>
+                                    <a href="https://www.facebook.com/lifeplannerstudies" class="btn btn-default social-icon facebook" target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/lifeplannerktm" class="btn btn-default social-icon twitter" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/lifeplannerstudies/" class="btn btn-default social-icon instagram" target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://in.pinterest.com/lifeplannerstudies/" class="btn btn-default social-icon pinterest" target="_blank">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCAS3cdbFYwoxk1raYD5Mi4w?view_as=subscriber" class="btn btn-default social-icon youtube" target="_blank">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/lifeplanner/" class="btn btn-default social-icon linkedin" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="copyright col-md-12">
+                            <div class="border-right">
+                                © 2024 Lifeplanner. All rights reserved. <a href="/colleges/privacypolicy">Privacy Policy</a>
+                            </div>
+                        </div>
+                    </div><!--/row-->
+                </div><!--/container-->
+            </div>
+
+        </footer>
+        <!-- end footer content -->
+ <!-- Javascript -->
+
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.easing.js"></script>
+
+        <script type="text/javascript" src="/js/owl.carousel.js"></script>
+        <script type="text/javascript" src="/js/parallax.js"></script>
+        <script type="text/javascript" src="/js/jquery-waypoints.js"></script>
+        <script type="text/javascript" src="/js/jquery.tweet.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="/js/jquery-validate.js"></script>
+
+        <!-- Revolution Slider -->
+        <script type="text/javascript" src="/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="/js/slider.js"></script>
+
+
+
+        <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script src="//http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDWml9un8St2k_w9Ha2SJ2B1G90S9sXxo&amp;sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="/js/map.js"></script>
+        <script type="text/javascript" src="/js/scroll.js"></script>
+
+
+
+
+<!-- END JAVASCRIPTS -->
+<script type="text/javascript">
+$("video").prop('muted', true); //mute
+</script>
+
+
+
+
+<script>
+    jQuery(window).load(function(){
+        jQuery(".hameid-loader-overlay").fadeOut();
+
+    });
+
+$('#overlay').modal('show');
+
+setTimeout(function() {
+    $('#overlay').modal('hide');
+}, 25000);
+
+</script>
+<style>
+body{
+  font-size: 15px;
+}
+    .popover-title {
+        color:#000;
+    }
+    .popover-content {
+         color:#000;
+    }
+
+   .tp-banner .revslider-initialised .tp-simpleresponsive{
+    transform: none!important;
+   }
+   .tp-banner{
+    /*background:url(/images/slides/1.jpg); */
+   }
+</style>
+
+
+</body>
+</html>
